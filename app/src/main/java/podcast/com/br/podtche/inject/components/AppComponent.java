@@ -1,23 +1,19 @@
 package podcast.com.br.podtche.inject.components;
 
-import android.content.SharedPreferences;
-
 import javax.inject.Singleton;
 
-
 import dagger.Component;
-import okhttp3.OkHttpClient;
-import podcast.com.br.podtche.data.AnalyticsManager;
 import podcast.com.br.podtche.data.LoginManager;
 import podcast.com.br.podtche.inject.modules.AppModule;
 import podcast.com.br.podtche.inject.modules.NetworkModule;
 import podcast.com.br.podtche.ui.activity.MainActivity;
 import podcast.com.br.podtche.viewmodel.AuthenticationViewModel;
+import podcast.com.br.podtche.viewmodel.DetailItemViewModel;
+import podcast.com.br.podtche.viewmodel.DetailViewModel;
 import podcast.com.br.podtche.viewmodel.HomeItemViewModel;
 import podcast.com.br.podtche.viewmodel.HomeViewModel;
 import podcast.com.br.podtche.viewmodel.MainViewModel;
 import podcast.com.br.podtche.viewmodel.MenuHeaderViewModel;
-import retrofit2.Retrofit;
 
 /**
  * Created by gholz on 2/13/16.
@@ -29,6 +25,10 @@ public interface AppComponent {
     void inject(HomeViewModel viewModel);
 
     void inject(HomeItemViewModel viewModel);
+
+    void inject(DetailItemViewModel viewModel);
+
+    void inject(DetailViewModel viewModel);
 //
 //    void inject(RecipeDetailViewModel viewModel);
 //
@@ -62,8 +62,8 @@ public interface AppComponent {
 
 //    FontManager getFontManager();
 
-    LoginManager getLoginManager();
-
-    AnalyticsManager getAnalyticsManager();
+//    LoginManager getLoginManager();
+//
+//    AnalyticsManager getAnalyticsManager();
 
 }

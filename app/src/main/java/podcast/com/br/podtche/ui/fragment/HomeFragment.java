@@ -5,9 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -17,9 +14,7 @@ import java.util.List;
 import podcast.com.br.podtche.R;
 import podcast.com.br.podtche.databinding.FragmentHomeBinding;
 import podcast.com.br.podtche.model.Category;
-import podcast.com.br.podtche.model.Podty;
 import podcast.com.br.podtche.ui.adapters.PagerAdapter;
-import podcast.com.br.podtche.view.HomeView;
 
 
 /**
@@ -66,12 +61,12 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        final View view = inflater.inflate(R.layout.activity_login, container, false);
+        final View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 //        mNoConnectionView = view.findViewById(R.id.noConnection);
 //        mNoConnectionView.findViewById(R.id.tryAgainButton).setOnClickListener(mOnClickTryAgain);
 
-//        binding = FragmentHomeBinding.bind(view);
+        binding = FragmentHomeBinding.bind(view);
 
         return view;
     }
@@ -80,25 +75,25 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-//        final List<Category> categories = new ArrayList<>();
-//        Category category = new Category(Category.ALL, 0);
-//        Category category2 = new Category("MEU HOME", 1);
-//        categories.add(category);
-//        categories.add(category2);
-//
-//        adapter = new PagerAdapter(categories,
-//                getChildFragmentManager());
-//
-//        binding.offersProgress.setVisibility(View.GONE);
-//
-//        binding.pager.setAdapter(adapter);
-//        binding.pager.setVisibility(View.VISIBLE);
-//
-//        binding.tabLayout.setupWithViewPager(binding.pager);
-//        binding.tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-//        binding.tabLayout.setVisibility(View.VISIBLE);
-//
-//        binding.pager.getCurrentItem();
+        final List<Category> categories = new ArrayList<>();
+        Category category = new Category(Category.ALL, 0);
+        Category category2 = new Category("MEU HOME", 1);
+        categories.add(category);
+        categories.add(category2);
+
+        adapter = new PagerAdapter(categories,
+                getChildFragmentManager());
+
+        binding.offersProgress.setVisibility(View.GONE);
+
+        binding.pager.setAdapter(adapter);
+        binding.pager.setVisibility(View.VISIBLE);
+
+        binding.tabLayout.setupWithViewPager(binding.pager);
+        binding.tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        binding.tabLayout.setVisibility(View.VISIBLE);
+
+        binding.pager.getCurrentItem();
     }
 
 }
